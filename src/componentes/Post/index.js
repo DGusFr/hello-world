@@ -1,5 +1,7 @@
 import styles from './Post.module.css';
 
+//A função retorna um elemento React que representa um componente de postagem
+//A imagem é definida com a propriedade "src" que carrega uma imagem de capa do post com base no "id"
 export default function Post({ post }) {
     return (
         <div className={styles.post}>
