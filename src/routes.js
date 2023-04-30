@@ -1,17 +1,17 @@
 import PaginaPadrao from "componentes/PaginaPadrao";
 import Rodape from "componentes/Rodape";
+import ScrollToTop from "componentes/ScrollToTop";
+import NaoEncontrada from "paginas/NaoEncontrada";
+import Post from "paginas/Post";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menu from "./componentes/Menu";
 import Inicio from './paginas/Inicio';
 import SobreMim from './paginas/SobreMim';
 
-//"element" é usada para especificar o componente que deve ser renderizado
-//"AppRoutes" é exportada como o valor padrão, o que permite que ela seja importada e usada em outras partes do código.
-// rota "sobremim" renderiza o componente "SobreMim", rota index renderiza o componente "Inicio".
 function AppRoutes() {
-  //o atributo 'index' na rota inicio e a simplificação das rotas aninhadas de 'PaginaPadrão'
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Menu />
 
       <Routes>
@@ -20,7 +20,8 @@ function AppRoutes() {
           <Route path="sobremim" element={<SobreMim />} />
         </Route>
         
-        <Route path="*" element={<div>Página não encontrada</div>} />
+        <Route path="posts/:id/*" element={<Post />} />
+        <Route path="*" element={<NaoEncontrada />} />
       </Routes>
 
       <Rodape />
