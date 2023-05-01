@@ -22,7 +22,7 @@ export default function NaoEncontrada() {
                 <p className={styles.paragrafo}>
                     Aguarde uns instantes e recarregue a página, ou volte para a página inicial.
                 </p>
-
+                
                 <div
                     className={styles.botaoContainer}
                     onClick={() => navegar(-1)}
@@ -43,3 +43,4 @@ export default function NaoEncontrada() {
 
     )
 }
+//O parâmetro "-1" passado para a função "navegar" é usado para navegar para a página anterior.
